@@ -1,0 +1,100 @@
+%  -------------------------------------基础包-------------------------------------
+\usepackage[margin=1in]{geometry}
+%\usepackage{txfonts} % 英文字体times new roman
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+
+% -------------------------------------宏定义-------------------------------------
+\def\JUSTfillbox[#1]#2{\CJKunderline{\makebox[#1]{\centering#2}}}
+\def\JUSTlabel[#1]#2{\makebox[#1]{\raggedright  #2}}
+\def\JUST@underline[#1]#2{%
+  \CJKunderline{\hbox to #1{\hfill#2\hfill}}}
+\def\JUSTunderline{\@ifnextchar[\JUST@underline\CJKunderline}
+
+% -------------------------------------页面设置-------------------------------------
+\setlength\parindent{0cm}
+\geometry{left=2.8cm,right=2.5cm,top=3.0cm,bottom=2.5cm}
+\def\defaultblank{1in}
+%\setlength{\textwidth}{157mm}% set required text width first
+%\setlength{\textheight}{242mm}% set required text width first
+% 页眉值设置为20mm
+%\setlength{\topmargin}{20mm}
+%\addtolength{\topmargin}{- \defaultblank}
+%\setlength{\headheight}{14.5pt}% set a minimum header height
+% 上边距：30mm；下边距：25mm
+%\setlength{\headsep}{30mm}
+%\addtolength{\headsep}{- \defaultblank}
+%\addtolength{\headsep}{- \topmargin}
+%\addtolength{\headsep}{- \headheight}
+% 页脚设置为17.5mm
+%\setlength{\footskip}{-17.5mm}
+%\addtolength{\footskip}{\paperheight}
+%\addtolength{\footskip}{-\defaultblank}
+%\addtolength{\footskip}{-\topmargin}
+%\addtolength{\footskip}{-\headheight}
+%\addtolength{\footskip}{-\headsep}
+%\addtolength{\footskip}{-\textheight}
+% 左边距：28mm；右边距25mm；双面
+%\setlength{\oddsidemargin}{2.6mm}% 1.0in+2.6mm= 28mm
+%\setlength{\evensidemargin}{-0.4mm}% 1.0in-0.4mm= 25mm
+% 行间距：每页：43行，行跨度：15.6磅
+ %% set margin for notes to zero
+\setlength{\marginparwidth}{0pt}% width of margin notes
+\setlength{\marginparsep}{0pt}% width of space between body text and margin notes
+%% part two -- vertical heights
+\raggedbottom
+%% specifies the amount of space between paragraphs.
+%% other reasonable specifications are \bigskipamount and \smallskipamount.
+\setlength{\parskip}{\medskipamount}
+%% default pagestyle is page number at bottom without headers and footers
+\pagestyle{plain}
+%% line spacing
+%\setlength{\baselineskip}{20pt}
+%\renewcommand{\baselinestretch}{1.5} % this is the default line space setting
+% -------------------------------------章节样式-------------------------------------
+
+
+\renewcommand{\baselinestretch}{1}
+% 正文小四号字体（12pt）行距20磅(fixed)
+\renewcommand{\normalsize}{\renewcommand{\baselinestretch}{1.0} \fontsize{12pt}{20pt} \selectfont }
+\ctexset{
+	chapter = { % 章标题：小三号黑体居中，段前与段后间距为1.5行；
+		pagestyle = {fancy},
+		name = {第,章},
+		number = \chinese{chapter},
+		format= {\centering\zihao{-3}\heiti}, 
+		beforeskip= 3ex,
+		afterskip= 3ex,
+		fixskip = true,
+	},
+	section = { % 节标题(1.1) ：四号黑体居左，段前与段后间距为1.0行；
+		format= {\zihao{4}\heiti}, 
+		beforeskip= 2ex,
+		afterskip= 2ex,
+		fixskip = true,
+	},
+	subsection = { % 条标题(1.1.1) ：小四号黑体居左，段前与段后间距为0.5行；
+		format= {\zihao{-4}\heiti}, 
+		beforeskip= 1ex,
+		afterskip= 1ex,
+		fixskip = true,
+	},
+	subsubsection = { %款标题(1.1.1.1) ：小四号黑体居左，段前与段后间距为0.5行；
+		afterindent=true,
+		aftername=\enspace,
+		format = {\zihao{-4}\heiti}, 
+		beforeskip = 1ex,
+		afterskip = 1ex,
+		fixskip = true,
+	},
+}
+%\renewcommand\thesubsubsection{\alph{subsubsection}}
+% -------------------------------------页眉页脚-------------------------------------
+\usepackage{fancyhdr}  
+\pagestyle{fancy}  % 在版芯上边线隔一行加一细线，细线上小五号字体居中打印页眉
+\fancyhead{} % clear all fields
+\fancyhead[LE]{\zihao{5}江苏科技大学硕士学位论文} % 偶数页眉为“江苏科技大学硕士学位论文”
+\fancyhead[RO]{\zihao{5}\leftmark } % 奇数页眉为本章的题序及标题
+\cfoot{\zihao{5}-\makebox[20pt]{\centering\thepage}-} % 页码从绪论（或引言）部分开始编排，以小写的阿拉伯数字顺序编号，位于页脚下方居中排列，五号字体

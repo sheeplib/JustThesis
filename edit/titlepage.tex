@@ -1,0 +1,176 @@
+\documentclass[UTF8]{ctexbook}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+
+\input info
+\input config
+%% 宏定义
+
+
+%% 封页页面设置
+%	\setlength\parindent{0cm}
+%	\geometry{left=2.8cm,right=2.5cm,top=3.0cm,bottom=2.5cm}
+
+\begin{document}
+%%------------------------  外 封  ---------------------------
+\cleardoublepage
+\thispagestyle{empty}
+\par{
+	\begin{wrapfigure}{r}{4cm}
+		\vspace{-0.5cm}
+		\includegraphics{justlogo.png}
+	\end{wrapfigure}
+% 封面左上角
+\songti\zihao{-4}
+学校代码：\JUST@underline[82pt]{\theSccode} \\
+分类号：\JUST@underline[95pt]{\theClass} \\
+密\quad 级：\JUST@underline[95pt]{\theSedegree} \\
+学\quad 号：\JUST@underline[95pt]{\theAuid}\\   
+}
+% 江苏科技大学硕士学位论文
+\vspace{2cm}
+\begin{center}
+	\songti\fontsize{42pt}{\baselineskip}\selectfont
+	\textbf{江\,苏\,科\,技\,大\,学}\\
+	\vspace{0.5cm}
+	\textbf{硕\ \ 士\ \ 学\ \ 位\ \ 论\ \ 文}\\
+\end{center}
+\begin{center}
+	\vfill
+	\heiti\zihao{2}\textbf{\theTitle }
+	\vfill
+\end{center}
+% 主要信息
+\vspace{0.5cm}
+%\begin{center}
+	\songti\zihao{-4}
+    \begin{tabular}{lc}
+		\vspace{0.5cm}
+		研\ 究\ 生\ 姓\ 名\JUST@underline[135pt]{\heiti{\theAuname}} & 导\ \ \,师\ \ \,姓\ \ \,名\JUST@underline[145pt]{\heiti{\theSuname}}\\
+		\vspace{0.5cm}
+		申请学位类别\JUST@underline[135pt]{\heiti{\theDecategory}} & 学位授予单位\JUST@underline[145pt]{\heiti{江 苏 科 技 大 学}}\\
+		\vspace{0.5cm}
+		学\ \ \,科\ \ \,专\ \ \,业\JUST@underline[135pt]{\heiti{\theMajor}} &  论文提交日期\JUST@underline[145pt]{\heiti{\theSubmit}}\\
+		\vspace{0.5cm}
+		研\ \ \,究\ \ \,方\ \ \,向\JUST@underline[135pt]{\heiti{\theArea}} & 论文答辩日期\JUST@underline[145pt]{\heiti{\theDefence}}\\
+		\vspace{0.5cm}
+		答辩委员会主席\JUST@underline[125pt]{\heiti{\theDechairman}} & 评\quad\ 阅\quad\ 人 \JUST@underline[145pt]{\heiti{盲\quad审}}\\
+		&\hfill \JUST@underline[145pt]{\heiti{盲\quad审}}\\
+		\vspace{0.5cm}
+    \end{tabular}
+%\end{center}
+% 日期
+\begin{center}
+	\songti\zihao{4}
+	\theFinish
+\end{center}
+\clearpage
+%%------------------------中文内封---------------------------
+%\cleardoublepage
+\thispagestyle{empty}
+{% 内封右上角
+\zihao{-4}\songti % （宋体小四）
+\noindent
+\begin{tabular}{p{40pt}p{70pt}}
+	\JUSTlabel[40pt]{分\hfill 类\hfill 号}： & \JUSTfillbox[70pt]{\theClass}    \\
+     \JUSTlabel[40pt]{密\hfill 级}： & \JUSTfillbox[70pt]{\theSedegree}    \\
+	\JUSTlabel[40pt]{学\hfill 号}： & \JUSTfillbox[70pt]{\theAuid}    \\
+\end{tabular}
+}
+{% 标题
+
+\vspace{40pt}
+\begin{center}
+\linespread{1.5}
+\heiti
+\zihao{1}
+\theSubject\ 硕士学位论文\\
+\zihao{2}
+\vspace{10pt}
+\vfill
+\theTitle
+\vfill
+\end{center}
+\vspace{60pt}
+}
+{% 作者
+
+\begin{center}
+\linespread{1.5}
+\heiti
+\zihao{-2}
+\begin{tabular}{p{80pt}p{100pt}}
+	\JUSTlabel[72pt]{学\hfill 生\hfill 姓\hfill 名} & {\theAuname}    \\
+     \JUSTlabel[72pt]{指\hfill 导\hfill 老\hfill 师} & {\theSuname}\ 教授    \\
+\end{tabular}
+\end{center}
+\vspace{160pt}
+}
+{% 出版日期
+\linespread{1.5}
+\songti
+\zihao{3}
+\begin{center}
+江苏科技大学\\
+二OO七年六月
+\end{center}
+}
+\clearpage
+%%------------------------英文内封---------------------------
+%\cleardoublepage
+\thispagestyle{empty}
+{% 标题
+\begin{center}
+\linespread{2}
+\heiti
+\zihao{3}
+A Thesis Submitted in Fulfillment of the Requirements\\
+for the Degree of Master of Management Science\\
+\linespread{1.5}
+\zihao{-2}
+\vfill
+\textbf{\theTitleEn}\\
+\vfill
+1111111111111111111111111111111111111111111111111\\
+\end{center}
+%\vspace{120pt}
+}
+{% 作者
+\begin{center}
+\linespread{1.5}
+\heiti
+\zihao{4}
+Submitted by\\
+\theAunameEn\\
+Supervised by\\
+\theSunameEn\\
+\end{center}
+\vspace{120pt}
+}
+{% 出版日期
+\begin{center}
+\linespread{1.5}
+\songti
+\zihao{4}
+Jiangsu University of Science and Technology\\
+June, 2007\\
+\end{center}
+}
+\clearpage
+%%------------------------  结  束  ---------------------------
+\setcounter{page} {0}
+正文测试页
+\clearpage
+  \if@twoside
+    \thispagestyle{empty}
+    \cleardoublepage
+  \else
+      \thispagestyle{empty}
+      \vspace*{\stretch{1}}
+      \begin{footnotesize}
+        \noindent
+        Draft Version (\today)
+      \end{footnotesize}
+  \fi
+\end{document}
